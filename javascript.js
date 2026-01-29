@@ -27,37 +27,45 @@ function playGame() {
         choiceComp = computerChoice.toLowerCase();
 
         if (choiceHuman === "rock" && choiceComp === "scissors") {
-            console.log("You win! Rock beats Scissors.");
+            resultsDiv.textContent = "You win! Rock beats Scissors.";
             humanScore++;
         }
         else if (choiceHuman === "rock" && choiceComp === "paper") {
-            console.log("You lose! Paper beats Rock.");
+            resultsDiv.textContent = "You lose! Paper beats Rock.";
             computerScore++;
         }
         else if (choiceHuman === "paper" && choiceComp === "rock") {
-            console.log("You win! Paper beats Rock.");
+            resultsDiv.textContent = "You win! Paper beats Rock.";
             humanScore++;
         }
         else if (choiceHuman === "paper" && choiceComp === "scissors") {
-            console.log("You lose! Scissors beats Paper.");
+            resultsDiv.textContent = "You lose! Scissors beats Paper.";
             computerScore++;
         }
         else if (choiceHuman === "scissors" && choiceComp === "rock") {
-            console.log("You lose! Rock beats Scissors.");
+            resultsDiv.textContent = "You lose! Rock beats Scissors.";
             computerScore++;
         }
         else if (choiceHuman === "scissors" && choiceComp === "paper") {
-            console.log("You win! Scissors beats Paper.");
+            resultsDiv.textContent = "You win! Scissors beats Paper.";
             humanScore++;
         }
     }
 
-    for (let i = 0; i < 5; i++) {
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
+    // for (let i = 0; i < 5; i++) {
+        // humanSelection = getHumanChoice();
+        // computerSelection = getComputerChoice();
+        // playRound(humanSelection, computerSelection);
+    // }
 }
+
+// event listener for buttons
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", () => {
+    playRound();
+})
+
+const resultsDiv = document.querySelector("#results");
 
 
 playGame();
